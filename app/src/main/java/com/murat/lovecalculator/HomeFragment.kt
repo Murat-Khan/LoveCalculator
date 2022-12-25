@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.murat.lovecalculator.databinding.FragmentHomeBinding
@@ -47,9 +48,7 @@ lateinit var binding: FragmentHomeBinding
                override fun onResponse(call: Call<LoveModel>, response: Response<LoveModel>) {
                    if (response.isSuccessful){
                        val loveModel = response.body()
-                       val bundle = Bundle()
-                     bundle.putSerializable("key",loveModel)
-                       findNavController().navigate(R.id.resultFragment,bundle )
+                       findNavController().navigate(R.id.resultFragment, bundleOf("key" to loveModel))
                        firstName.text?.clear()
                        secondName.text?.clear()
 
