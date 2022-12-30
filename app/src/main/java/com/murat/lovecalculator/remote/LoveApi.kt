@@ -1,4 +1,4 @@
-package com.murat.lovecalculator
+package com.murat.lovecalculator.remote
 
 import retrofit2.Call
 import retrofit2.http.GET

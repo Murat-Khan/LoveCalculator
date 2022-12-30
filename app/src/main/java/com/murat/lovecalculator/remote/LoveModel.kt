@@ -1,4 +1,4 @@
-package com.murat.lovecalculator
+package com.murat.lovecalculator.remote
 
 import com.google.gson.annotations.SerializedName
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.murat.lovecalculator.HomeFragment"
+        android:name="com.murat.lovecalculator.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.murat.lovecalculator.ResultFragment"
+        android:name="com.murat.lovecalculator.fragments.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action

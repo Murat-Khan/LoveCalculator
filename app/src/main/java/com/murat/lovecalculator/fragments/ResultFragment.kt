@@ -1,19 +1,18 @@
-package com.murat.lovecalculator
+package com.murat.lovecalculator.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
-import com.murat.lovecalculator.databinding.FragmentHomeBinding
 import com.murat.lovecalculator.databinding.FragmentResultBinding
+import com.murat.lovecalculator.remote.LoveModel
 
 
 class ResultFragment : Fragment() {
 
-    lateinit var binding: FragmentResultBinding
+    private lateinit var binding: FragmentResultBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,7 +37,7 @@ class ResultFragment : Fragment() {
     }
 
     private fun setData() {
-        val loveModel:LoveModel = arguments?.getSerializable("key") as LoveModel
+        val loveModel : LoveModel = arguments?.getSerializable("key") as LoveModel
         binding.tvFirstName.text = loveModel.fistName
         binding.tvSecondName.text = loveModel.secondName
         binding.tvResult.text = loveModel.result
