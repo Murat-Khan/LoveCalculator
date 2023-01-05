@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:layout_marginHorizontal="20dp"
     android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragments.homefragment.HomeFragment">
 
 
 

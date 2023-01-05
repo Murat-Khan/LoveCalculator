@@ -10,4 +10,6 @@
     <string name="percentage">Percentage</string>
     <string name="try_again">Try Again</string>
     <string name="calculate">Calculate</string>
+    <string name="skip">Skip</string>
+    <string name="get_started">Get started</string>
 </resources>

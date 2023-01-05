@@ -1,4 +1,4 @@
-package com.murat.lovecalculator.fragments
+package com.murat.lovecalculator.fragments.resultfragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

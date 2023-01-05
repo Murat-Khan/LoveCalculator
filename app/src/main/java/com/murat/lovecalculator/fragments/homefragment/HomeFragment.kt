@@ -1,28 +1,25 @@
-package com.murat.lovecalculator.fragments
+package com.murat.lovecalculator.fragments.homefragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.fragment.app.activityViewModels
-
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.murat.lovecalculator.R
 import com.murat.lovecalculator.databinding.FragmentHomeBinding
+
 import com.murat.lovecalculator.viewmodel.LoveViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
 lateinit var binding: FragmentHomeBinding
 private val viewModel : LoveViewModel  by  viewModels()
-
-
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,6 +28,9 @@ private val viewModel : LoveViewModel  by  viewModels()
         binding = FragmentHomeBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
         return binding.root
+
+
+
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
