@@ -1,7 +1,12 @@
 package com.murat.lovecalculator.di
 import android.content.Context
+import android.content.Entity
+import androidx.room.Room
 import com.murat.lovecalculator.local.Pref
 import com.murat.lovecalculator.remote.LoveApi
+import com.murat.lovecalculator.remote.LoveModel
+import com.murat.lovecalculator.room.LoveDataBase
+import com.murat.lovecalculator.utils.Constants.LOVE_DATABASE
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +27,15 @@ object AppModule {
     fun getSharedPreferences(@ApplicationContext appContext: Context): Pref {
         return Pref(appContext)
     }
+   /* @Provides
+   fun provideDao(db : LoveDataBase) = db.getDao()
+
+    @Provides
+    fun provideDatabase(@ApplicationContext context:Context) =Room.databaseBuilder(
+        context,LoveDataBase::class.java, LOVE_DATABASE)
+        .allowMainThreadQueries()
+        .build()*/
+
 
 
 }

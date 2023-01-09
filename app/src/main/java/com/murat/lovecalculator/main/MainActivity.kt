@@ -3,7 +3,10 @@ package com.murat.lovecalculator.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import com.murat.lovecalculator.R
 import com.murat.lovecalculator.databinding.ActivityMainBinding
@@ -24,6 +27,16 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         setContentView(binding.root)
         val navController = findNavController(R.id.nav_host_fragment)
+        binding.btnHistory.setOnClickListener {
+
+            navController.navigate(R.id.historyFragment)
+
+
+
+        }
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            binding.btnHistory.isVisible = destination.id != R.id.historyFragment
+        }
 
         if (viewModel.isFirstStart()) {
             navController.navigate(R.id.onBoardingFragment)

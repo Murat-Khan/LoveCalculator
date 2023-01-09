@@ -10,15 +10,15 @@
 
 
 
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            app:lottie_autoPlay="true"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:lottie_rawRes="@raw/love_dancing"
-            app:layout_constraintBottom_toTopOf="@id/text_view"/>
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                app:lottie_autoPlay="true"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:lottie_rawRes="@raw/love_dancing"
+                app:layout_constraintBottom_toTopOf="@id/text_view"/>
 
         <TextView
             android:id="@+id/text_view"
@@ -85,5 +85,8 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="400dp"
             app:cornerRadius="10dp" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

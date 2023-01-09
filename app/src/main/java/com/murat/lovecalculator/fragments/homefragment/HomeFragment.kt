@@ -8,11 +8,14 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.murat.lovecalculator.App
 import com.murat.lovecalculator.R
 import com.murat.lovecalculator.databinding.FragmentHomeBinding
+import com.murat.lovecalculator.room.LoveDataBase
 
 import com.murat.lovecalculator.viewmodel.LoveViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
@@ -20,6 +23,9 @@ class HomeFragment : Fragment() {
 
 lateinit var binding: FragmentHomeBinding
 private val viewModel : LoveViewModel  by  viewModels()
+    @Inject
+    lateinit var db : LoveDataBase
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +47,8 @@ private val viewModel : LoveViewModel  by  viewModels()
 
     }
 
+
+
     private fun initClicker() {
        with(binding){
            btnCalculate.setOnClickListener {
@@ -50,6 +58,10 @@ private val viewModel : LoveViewModel  by  viewModels()
                        findNavController().navigate(R.id.resultFragment, bundleOf("key" to loveModel))
                        firstName.text?.clear()
                        secondName.text?.clear()
+                       db.getDao().insertLove(it)
+
+
+                       //App.db.getDao().insertLove(it)
                    })
 
 
